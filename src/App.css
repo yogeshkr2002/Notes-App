@@ -69,17 +69,68 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  /* width: 400px; */
+  width: 500px;
+  height: 200px;
 }
 
 .popup-content form {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .popup-content input {
   margin-bottom: 10px;
-  padding: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 15px;
+  width: 305px;
+  letter-spacing: 1px;
+}
+
+.popupHeading {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.inputLabel {
+  font-size: 1.4rem;
+  margin-right: 30px;
+}
+.popupForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.two {
+  display: flex;
+  justify-content: flex-end;
+  width: 95%;
+}
+
+/* ============================== */
+
+/* Entire Scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+/* Track of the scrollbar (background) */
+::-webkit-scrollbar-track {
+  background: black; /* Color of the track */
+  border-radius: 20px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background-color: white; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Roundness of the scrollbar handle */
+  /* border: 2px solid #f1f1f1; Optional: adds some space between handle and edge */
+}
+
+/* Hover effect on the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color on hover */
 }
