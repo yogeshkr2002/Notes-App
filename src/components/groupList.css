@@ -1,0 +1,17 @@
+.groupListContainer {
+  display: flex;
+}
+
+.group-list {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px; */
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}

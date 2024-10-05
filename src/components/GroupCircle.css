@@ -1,0 +1,29 @@
+.group-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Background color for the circle */
+  color: white; /* Text color */
+  border-radius: 50%; /* Make it circular */
+  width: 40px; /* Circle width */
+  height: 40px; /* Circle height */
+  font-size: 16px; /* Font size for initials */
+  font-weight: bold; /* Make initials bold */
+}
+
+/* Styles for the add button */
+.add-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Round corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size for button */
+}
+
+/* Add hover effect for the button */
+.add-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

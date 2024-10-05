@@ -1,0 +1,93 @@
+/* Container for the entire note section */
+.note-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  scrollbar-color: black white; /* Scrollbar style */
+  scrollbar-width: thin;
+}
+
+/* Notes list background and scrollbar styling */
+.notes-list {
+  background: #dae5f5;
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-color: black white; /* Scrollbar color styling */
+  scrollbar-width: thin;
+}
+
+/* Heading with fixed background */
+.heading {
+  flex: 1;
+  background: #001f8b;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  font-size: 24px;
+}
+
+/* Container for each note */
+.content {
+  margin: 20px;
+}
+
+/* Note item styling with box shadow */
+.note-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adding shadow */
+}
+
+/* Styling for metadata (date and time) below each note */
+.note-meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #6c757d;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Bottom section with a text area */
+.bottomBox {
+  display: flex;
+  flex: 3;
+  justify-content: center;
+  align-items: center;
+  background: #001f8b;
+  position: relative;
+}
+
+/* Box shadow for the text area */
+.textBox {
+  width: 95%;
+  height: 80%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow */
+}
+
+.textArea {
+  width: 97%;
+  height: 85%;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Positioning the forward arrow icon */
+.addButton {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+}
+
+.arrowIcon {
+  color: rgb(93, 34, 34);
+  font-size: 24px;
+  cursor: pointer;
+}
