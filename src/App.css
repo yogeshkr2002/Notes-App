@@ -15,7 +15,7 @@
 }
 
 .rightBox {
-  background-color: yellow;
+  /* background-color: yellow; */
   flex: 2;
   display: flex;
   justify-content: center;
