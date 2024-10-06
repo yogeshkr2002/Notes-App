@@ -1,3 +1,5 @@
+// src/components/GroupList.jsx
+
 import React from "react";
 import GroupCircle from "./GroupCircle";
 import "./groupList.css";
@@ -9,10 +11,11 @@ const GroupList = ({ groups, setSelectedGroup }) => {
         {groups.map((group, index) => (
           <li
             key={index}
-            onClick={() => setSelectedGroup(group)}
+            onClick={() => setSelectedGroup(group)} // Pass the entire group object
             className="listItem"
           >
-            <GroupCircle groupName={group} /> {group}
+            <GroupCircle groupName={group.name} color={group.color} />
+            {group.name}
           </li>
         ))}
       </ul>

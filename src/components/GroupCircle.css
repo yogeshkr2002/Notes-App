@@ -2,13 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #007bff; /* Background color for the circle */
   color: white; /* Text color */
   border-radius: 50%; /* Make it circular */
   width: 40px; /* Circle width */
   height: 40px; /* Circle height */
   font-size: 16px; /* Font size for initials */
   font-weight: bold; /* Make initials bold */
+  background-color: var(
+    --circle-color,
+    #007bff
+  ); /* Dynamic background color with default */
 }
 
 /* Styles for the add button */

@@ -18,16 +18,36 @@ const NoteContainer = ({ selectedGroup, existingNotes, onAddNote }) => {
     }
   };
 
+  // Function to get initials from the group name
+  const getInitials = (name) => {
+    const names = name.split(" ");
+    const initials = names.map((n) => n.charAt(0).toUpperCase()).join("");
+    return initials;
+  };
+
   return (
     <div className="note-container">
-      <div className="heading">My Notes</div>
+      {/* Header with Group Icon and Name */}
+      <div className="heading">
+        <div className="group-header">
+          <div
+            className="group-profile"
+            style={{ backgroundColor: selectedGroup.color }}
+          >
+            {getInitials(selectedGroup.name)}{" "}
+            {/* Displaying initials of group name */}
+          </div>
+          <h2>{selectedGroup.name}</h2>
+        </div>
+      </div>
       <div className="notes-list">
         <div className="content">
           {existingNotes?.map((note, index) => (
             <div key={index} className="note-item">
-              {note}
+              {note.text} {/* Displaying note text */}
               <div className="note-meta">
-                <span>9 Mar 2023</span> • <span>10:10 AM</span>
+                <span>{note.date}</span> • <span>{note.time}</span>{" "}
+                {/* Displaying real-time date and time */}
               </div>
             </div>
           ))}

@@ -91,27 +91,3 @@
   font-size: 24px;
   cursor: pointer;
 }
-
-/* =========================== */
-/* Entire Scrollbar */
-::-webkit-scrollbar {
-  width: 10px !important; /* Width of the scrollbar */
-}
-
-/* Track of the scrollbar (background) */
-::-webkit-scrollbar-track {
-  background: rgb(212, 209, 209) !important; /* Color of the track */
-  border-radius: 20px;
-}
-
-/* Scrollbar Handle */
-::-webkit-scrollbar-thumb {
-  background-color: white; /* Color of the scrollbar handle */
-  border-radius: 10px; /* Roundness of the scrollbar handle */
-  /* border: 2px solid #f1f1f1; Optional: adds some space between handle and edge */
-}
-
-/* Hover effect on the scrollbar handle */
-::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Darker color on hover */
-}

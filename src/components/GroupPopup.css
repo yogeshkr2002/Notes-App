@@ -1,0 +1,122 @@
+/* Popup styles */
+.group-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: auto;
+}
+
+.popupHeading {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.popup-content input {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 100%; /* Make input full width */
+  letter-spacing: 1px;
+}
+
+.two {
+  display: flex;
+  justify-content: space-between; /* Space buttons evenly */
+}
+
+/* Color selection styles */
+.color-picker {
+  margin-bottom: 15px;
+}
+
+.color-picker h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.color-options {
+  display: flex;
+  justify-content: space-between; /* Space color circles evenly */
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent; /* Initial border */
+  transition: border-color 0.2s ease;
+}
+
+.color-circle.selected {
+  border-color: black; /* Border to indicate selected color */
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Color selection styles */
+.color-picker {
+  margin-bottom: 15px;
+}
+
+.color-picker h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.color-options {
+  display: flex;
+  justify-content: space-between; /* Space color circles evenly */
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent; /* Initial border */
+  transition: border-color 0.2s ease;
+}
+
+.color-circle.selected {
+  border-color: black; /* Border to indicate selected color */
+}
