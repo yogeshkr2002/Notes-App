@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { FiArrowRight } from "react-icons/fi"; // Importing an arrow icon from react-icons
 import "./noteContainer.css";
 
 const NoteContainer = ({ selectedGroup, existingNotes, onAddNote }) => {
   const [noteInput, setNoteInput] = useState(""); // Local state for note input
+  const [isFocused, setIsFocused] = useState(false); // State to track if textarea is focused
 
   const handleAddNote = () => {
     if (noteInput) {
@@ -29,16 +29,14 @@ const NoteContainer = ({ selectedGroup, existingNotes, onAddNote }) => {
     <div className="note-container">
       {/* Header with Group Icon and Name */}
       <div className="heading">
-        <div className="group-header">
-          <div
-            className="group-profile"
-            style={{ backgroundColor: selectedGroup.color }}
-          >
-            {getInitials(selectedGroup.name)}{" "}
-            {/* Displaying initials of group name */}
-          </div>
-          <h2>{selectedGroup.name}</h2>
+        <div
+          className="group-profile"
+          style={{ backgroundColor: selectedGroup.color }}
+        >
+          {getInitials(selectedGroup.name)}{" "}
+          {/* Displaying initials of group name */}
         </div>
+        <h2>{selectedGroup.name}</h2>
       </div>
       <div className="notes-list">
         <div className="content">
@@ -56,15 +54,22 @@ const NoteContainer = ({ selectedGroup, existingNotes, onAddNote }) => {
       <div className="bottomBox">
         <div className="textBox">
           <textarea
-            placeholder="Enter your text here........"
+            placeholder="Enter your text here..."
             value={noteInput}
             onChange={(e) => setNoteInput(e.target.value)}
             onKeyDown={handleKeyDown}
+            onFocus={() => setIsFocused(true)} // Set focused state when textarea is focused
+            onBlur={() => setIsFocused(false)} // Set unfocused state when textarea is blurred
             className="textArea"
           />
         </div>
         <div className="addButton">
-          <FiArrowRight onClick={handleAddNote} className="arrowIcon" />
+          <img
+            src={isFocused ? "/image/blue.png" : "/image/brown.png"} // Use blue.png when focused, brown.png when not
+            alt="Next"
+            onClick={handleAddNote}
+            className="arrowIcon"
+          />
         </div>
       </div>
     </div>

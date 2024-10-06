@@ -1,21 +1,19 @@
-// src/components/GroupPopup.jsx
-
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./GroupPopup.css"; // Import your styles
 
 const GroupPopup = ({ addGroup, setShowPopup }) => {
   const [groupName, setGroupName] = useState("");
   const [selectedColor, setSelectedColor] = useState("#007bff"); // Default color
+  const popupRef = useRef(null); // Ref for the popup content div
 
   // Predefined color options for the group circles
   const colorOptions = [
-    "#007bff",
-    "#28a745",
-    "#ff073a",
+    "#b522e6",
+    "#dd7cd2",
+    "#a6e5ea",
     "#fd7e14",
     "#6f42c1",
-    "#17a2b8",
-    "#ffc107",
+    "#54b4eb",
   ];
 
   const handleSubmit = (e) => {
@@ -29,23 +27,43 @@ const GroupPopup = ({ addGroup, setShowPopup }) => {
     }
   };
 
+  // Handle click outside the popup-content div
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setShowPopup(false); // Close the popup when clicking outside
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setShowPopup]);
+
   return (
     <div className="group-popup">
-      <div className="popup-content">
-        {" "}
+      <div className="popup-content" ref={popupRef}>
         {/* Added wrapper for popup content */}
-        <h2 className="popupHeading">Add New Group</h2>
+        <h2 className="popupHeading">Create New group</h2>
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={groupName}
-            onChange={(e) => setGroupName(e.target.value)}
-            placeholder="Enter group name"
-            required
-          />
+          <div className="groupNameText">
+            <label style={{ fontSize: "25px", width: "32%", fontWeight: 700 }}>
+              Group Name
+            </label>
+            <input
+              type="text"
+              value={groupName}
+              onChange={(e) => setGroupName(e.target.value)}
+              placeholder="Enter group name"
+              required
+              className="input"
+            />
+          </div>
 
           <div className="color-picker">
-            <h4>Select a color:</h4>
+            <h4 style={{ fontSize: "25px" }}>Choose colour</h4>
             <div className="color-options">
               {colorOptions.map((color) => (
                 <div
@@ -61,10 +79,10 @@ const GroupPopup = ({ addGroup, setShowPopup }) => {
           </div>
 
           <div className="two">
-            <button type="submit">Add Group</button>
-            <button type="button" onClick={() => setShowPopup(false)}>
+            <button type="submit">Create</button>
+            {/* <button type="button" onClick={() => setShowPopup(false)}>
               Cancel
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

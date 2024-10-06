@@ -4,8 +4,8 @@
   justify-content: center;
   color: white; /* Text color */
   border-radius: 50%; /* Make it circular */
-  width: 40px; /* Circle width */
-  height: 40px; /* Circle height */
+  width: 60px; /* Circle width */
+  height: 60px; /* Circle height */
   font-size: 16px; /* Font size for initials */
   font-weight: bold; /* Make initials bold */
   background-color: var(

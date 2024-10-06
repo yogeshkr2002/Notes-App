@@ -4,30 +4,37 @@
   height: 100%;
   width: 100%;
   flex-direction: column;
-  scrollbar-color: black white; /* Scrollbar style */
-  scrollbar-width: thin;
 }
 
 /* Notes list background and scrollbar styling */
 .notes-list {
   background: #dae5f5;
-  flex: 10;
+  flex: 11;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  scrollbar-color: black white; /* Scrollbar color styling */
-  scrollbar-width: thin;
+  /* scrollbar-color: black white; */
+  /* scrollbar-width: thin; */
 }
 
 /* Heading with fixed background */
 .heading {
-  flex: 1;
+  flex: 2;
   background: #001f8b;
   color: white;
   display: flex;
   align-items: center;
   padding-left: 15px;
-  font-size: 24px;
+  font-size: 20px;
+  gap: 15px;
+}
+.group-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }
 
 /* Container for each note */
@@ -57,7 +64,7 @@
 /* Bottom section with a text area */
 .bottomBox {
   display: flex;
-  flex: 3;
+  flex: 5;
   justify-content: center;
   align-items: center;
   background: #001f8b;
@@ -72,7 +79,7 @@
 }
 
 .textArea {
-  width: 97%;
+  width: 98%;
   height: 85%;
   border-radius: 8px;
   padding: 10px;
@@ -82,12 +89,12 @@
 /* Positioning the forward arrow icon */
 .addButton {
   position: absolute;
-  bottom: 10px;
+  bottom: 25px;
   right: 40px;
 }
 
 .arrowIcon {
-  color: rgb(93, 34, 34);
-  font-size: 24px;
+  width: 25px;
+  height: 20px;
   cursor: pointer;
 }

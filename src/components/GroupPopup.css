@@ -13,17 +13,23 @@
 }
 
 .popup-content {
-  background: #fff;
+  background: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 500px;
   height: auto;
 }
 
 .popupHeading {
-  font-size: 1.5rem;
+  font-size: 25px;
   margin-bottom: 10px;
+}
+
+.groupNameText {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .popup-content form {
@@ -33,7 +39,7 @@
 }
 
 .popup-content input {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -41,16 +47,23 @@
   border-radius: 15px;
   width: 100%; /* Make input full width */
   letter-spacing: 1px;
+  width: 60%;
+  margin-left: 10px;
 }
 
 .two {
   display: flex;
-  justify-content: space-between; /* Space buttons evenly */
+  width: 100%;
+  justify-content: flex-end;
+  /* justify-content: space-between; */
 }
 
 /* Color selection styles */
 .color-picker {
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 .color-picker h4 {
@@ -61,11 +74,11 @@
 .color-options {
   display: flex;
   justify-content: space-between; /* Space color circles evenly */
+  gap: 10px;
 }
 
 .color-circle {
-  width: 30px;
-  height: 30px;
+  width: max-content;
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid transparent; /* Initial border */
@@ -78,11 +91,12 @@
 
 button {
   padding: 8px 12px;
-  background-color: #007bff;
+  background-color: #001f8b;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  width: 100px;
 }
 
 button:hover {

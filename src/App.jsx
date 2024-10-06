@@ -39,10 +39,20 @@ const App = () => {
   const addNoteToGroup = (noteInput) => {
     if (selectedGroup) {
       const currentDate = new Date();
-      const formattedDate = `${currentDate.getFullYear()}/${
-        currentDate.getMonth() + 1
-      }/${currentDate.getDate()}`;
-      const formattedTime = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+
+      // Format date: '6 Oct 2024'
+      const formattedDate = currentDate.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
+
+      // Format time: '10:10 AM'
+      const formattedTime = currentDate.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
 
       setNotes((prev) => ({
         ...prev,
