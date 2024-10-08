@@ -146,7 +146,7 @@ button:focus {
 @media (max-width: 500px) {
   .popup-content {
     width: 70%;
-    height: 20%;
+    height: 25%;
   }
 
   .label-1 {
@@ -178,7 +178,7 @@ button:focus {
   }
   .two {
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 10px;
   }
   .createBtn {
     width: 200px;
@@ -194,12 +194,5 @@ button:focus {
   }
   .group-list {
     gap: 15px;
-  }
-}
-
-@media (max-width: 380px) {
-  .popup-content {
-    width: 70%;
-    height: 25%;
   }
 }
