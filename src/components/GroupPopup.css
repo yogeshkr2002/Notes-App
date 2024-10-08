@@ -146,7 +146,7 @@ button:focus {
 @media (max-width: 500px) {
   .popup-content {
     width: 70%;
-    height: 20%;
+    height: 230px;
   }
 
   .label-1 {
