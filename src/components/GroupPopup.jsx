@@ -49,9 +49,7 @@ const GroupPopup = ({ addGroup, setShowPopup }) => {
         <h2 className="popupHeading">Create New group</h2>
         <form onSubmit={handleSubmit}>
           <div className="groupNameText">
-            <label style={{ fontSize: "25px", width: "32%", fontWeight: 700 }}>
-              Group Name
-            </label>
+            <label className="label-1">Group Name</label>
             <input
               type="text"
               value={groupName}
@@ -63,7 +61,7 @@ const GroupPopup = ({ addGroup, setShowPopup }) => {
           </div>
 
           <div className="color-picker">
-            <h4 style={{ fontSize: "25px" }}>Choose colour</h4>
+            <h4>Choose colour</h4>
             <div className="color-options">
               {colorOptions.map((color) => (
                 <div
@@ -79,7 +77,9 @@ const GroupPopup = ({ addGroup, setShowPopup }) => {
           </div>
 
           <div className="two">
-            <button type="submit">Create</button>
+            <button type="submit" className="createBtn">
+              Create
+            </button>
             {/* <button type="button" onClick={() => setShowPopup(false)}>
               Cancel
             </button> */}

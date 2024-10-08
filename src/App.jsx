@@ -6,7 +6,6 @@ import "./App.css";
 
 const App = () => {
   const [groups, setGroups] = useState(() => {
-    // Retrieve saved groups from localStorage
     const savedGroups = localStorage.getItem("groups");
     return savedGroups ? JSON.parse(savedGroups) : [];
   });
@@ -14,40 +13,45 @@ const App = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [notes, setNotes] = useState(() => {
-    // Retrieve saved notes from localStorage
     const savedNotes = localStorage.getItem("notes");
     return savedNotes ? JSON.parse(savedNotes) : {};
   });
 
-  // Save groups to localStorage whenever they change
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+
   useEffect(() => {
     localStorage.setItem("groups", JSON.stringify(groups));
   }, [groups]);
 
-  // Save notes to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
-  // Function to add a new group
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const addGroup = (group) => {
     setGroups((prevGroups) => [...prevGroups, group]);
     setShowPopup(false);
   };
 
-  // Function to add a note to the selected group
   const addNoteToGroup = (noteInput) => {
     if (selectedGroup) {
       const currentDate = new Date();
-
-      // Format date: '6 Oct 2024'
       const formattedDate = currentDate.toLocaleDateString("en-GB", {
         day: "numeric",
         month: "short",
         year: "numeric",
       });
 
-      // Format time: '10:10 AM'
       const formattedTime = currentDate.toLocaleTimeString("en-US", {
         hour: "numeric",
         minute: "numeric",
@@ -66,15 +70,21 @@ const App = () => {
 
   return (
     <div className="appContainer">
-      <div className="leftBox">
-        <h1
-          style={{ height: "15%", alignContent: "center", marginLeft: "150px" }}
-        >
-          Pocket Notes
-        </h1>
+      <div
+        className="leftBox"
+        style={{
+          display: isMobile && selectedGroup ? "none" : "",
+        }}
+      >
+        <h1 className="titleHeading">Pocket Notes</h1>
         <div className="list">
-          <GroupList groups={groups} setSelectedGroup={setSelectedGroup} />
+          <GroupList
+            groups={groups}
+            setSelectedGroup={setSelectedGroup}
+            selectedGroup={selectedGroup}
+          />
         </div>
+
         <div className="imgBox">
           <img
             src="/image/pic3.jpg"
@@ -88,12 +98,18 @@ const App = () => {
         )}
       </div>
 
-      <div className="rightBox">
+      <div
+        className="rightBox"
+        style={{
+          display: isMobile && !selectedGroup ? "none" : "flex",
+        }}
+      >
         {selectedGroup ? (
           <NoteContainer
             selectedGroup={selectedGroup}
             existingNotes={notes[selectedGroup.name]}
             onAddNote={addNoteToGroup}
+            setSelectedGroup={setSelectedGroup}
           />
         ) : (
           <img

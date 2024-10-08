@@ -1,10 +1,8 @@
-// src/components/GroupList.jsx
-
 import React from "react";
 import GroupCircle from "./GroupCircle";
 import "./groupList.css";
 
-const GroupList = ({ groups, setSelectedGroup }) => {
+const GroupList = ({ groups, setSelectedGroup, selectedGroup }) => {
   return (
     <div className="groupListContainer">
       <ul className="group-list">
@@ -12,7 +10,9 @@ const GroupList = ({ groups, setSelectedGroup }) => {
           <li
             key={index}
             onClick={() => setSelectedGroup(group)} // Pass the entire group object
-            className="listItem"
+            className={`listItem ${
+              selectedGroup?.name === group.name ? "selected" : ""
+            }`} // Add 'selected' class if the group is selected
           >
             <GroupCircle groupName={group.name} color={group.color} />
             {group.name}

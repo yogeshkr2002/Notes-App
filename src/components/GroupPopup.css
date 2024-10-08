@@ -45,7 +45,7 @@
   padding-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 15px;
-  width: 100%; /* Make input full width */
+  width: 100%;
   letter-spacing: 1px;
   width: 60%;
   margin-left: 10px;
@@ -89,7 +89,7 @@
   border-color: black; /* Border to indicate selected color */
 }
 
-button {
+.createBtn {
   padding: 8px 12px;
   background-color: #001f8b;
   color: white;
@@ -114,12 +114,12 @@ button:focus {
 
 .color-picker h4 {
   margin-bottom: 5px;
-  font-size: 1.2rem;
+  font-size: 25px;
 }
 
 .color-options {
   display: flex;
-  justify-content: space-between; /* Space color circles evenly */
+  justify-content: space-between;
 }
 
 .color-circle {
@@ -127,10 +127,72 @@ button:focus {
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid transparent; /* Initial border */
+  border: 2px solid transparent;
   transition: border-color 0.2s ease;
 }
 
 .color-circle.selected {
   border-color: black; /* Border to indicate selected color */
+}
+
+.label-1 {
+  font-size: 25px;
+  width: 32%;
+  font-weight: 700;
+}
+
+/* ----------------------------- */
+
+@media (max-width: 500px) {
+  .popup-content {
+    width: 70%;
+    height: 20%;
+  }
+
+  .label-1 {
+    font-size: 20px;
+    width: 40%;
+  }
+  .popup-content input {
+    width: 50%;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 10px;
+  }
+  .color-picker h4 {
+    width: 40%;
+    font-size: 18px;
+  }
+  .color-options {
+    width: 55%;
+    gap: 5px;
+  }
+  .color-circle {
+    width: 20px;
+    height: 20px;
+  }
+  .color-picker {
+    gap: 10px;
+  }
+  .two {
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .createBtn {
+    width: 200px;
+    font-size: 18px;
+  }
+  .list {
+    padding-left: 25px;
+  }
+  .listItem {
+    font-size: 25px;
+    font-weight: 600;
+    gap: 20px;
+  }
+  .group-list {
+    gap: 15px;
+  }
 }

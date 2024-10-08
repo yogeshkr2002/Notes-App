@@ -11,9 +11,20 @@
 }
 
 .listItem {
+  padding: 10px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-left: 20px;
+  border-radius: 8px;
   font-size: 20px;
+  transition: background-color 0.3s;
 }
+
+.listItem.selected {
+  background-color: rgb(242, 240, 240);
+}
+
+/* .listItem:hover {
+  background-color: #f0f0f0; 
+} */

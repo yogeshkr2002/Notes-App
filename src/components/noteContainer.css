@@ -98,3 +98,36 @@
   height: 20px;
   cursor: pointer;
 }
+.backBtn {
+  display: none;
+}
+
+/* ----------------------------------- */
+
+@media (max-width: 500px) {
+  .textArea {
+    width: 94%;
+    height: 85%;
+  }
+  .textBox {
+    width: 90%;
+    height: 75%;
+  }
+  .bottomBox {
+    flex: 3;
+  }
+  /* .note-container {
+    height: 100%;
+    width: 98%;
+    margin-left: -15px;
+  } */
+  .heading {
+    padding-left: 15px;
+  }
+  .heading h2 {
+    font-size: 22px;
+  }
+  .backBtn {
+    display: block;
+  }
+}
